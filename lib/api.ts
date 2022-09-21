@@ -2,6 +2,24 @@ import fs from 'fs'
 import { join } from 'path'
 import matter from 'gray-matter'
 
+export type Author = {
+  name: string
+  picture: string
+}
+
+export type Post = {
+  slug: string
+  title: string
+  date: string
+  coverImage: string
+  author: Author
+  excerpt: string
+  ogImage: {
+    url: string
+  }
+  content: string
+}
+
 const postsDirectory = join(process.cwd(), '_posts')
 
 export function getPostSlugs() {

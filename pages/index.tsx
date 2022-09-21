@@ -1,6 +1,6 @@
-import { getAllPosts } from '../lib/api'
+import { getAllPosts, Post } from '../lib/api'
 import Head from 'next/head'
-import Post from '../interfaces/post'
+import styled from 'styled-components'
 
 type Props = {
   allPosts: Post[]
@@ -12,9 +12,14 @@ export default function Index({}: Props) {
       <Head>
         <title>Theo Gregory's Mumble Rag</title>
       </Head>
+      <Page>{'foo'}</Page>
     </>
   )
 }
+
+const Page = styled('div')`
+  padding: 8px 16px;
+`
 
 export const getStaticProps = async () => {
   const allPosts = getAllPosts([
